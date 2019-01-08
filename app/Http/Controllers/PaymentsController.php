@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Payment;
 
 class PaymentsController extends Controller
 {
@@ -13,7 +14,8 @@ class PaymentsController extends Controller
      */
     public function index()
     {
-        return 123;
+        $payments = Payment::all();
+        return view('payments.index')->with('payments', $payments);
     }
 
     /**
