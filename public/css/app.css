@@ -1,4 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+
+#footer {
+  margin-top: 30px;
+  padding: 20px;
+  color: #fff;
+  background: #333;
+}
 
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
@@ -10488,10 +10495,5 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
