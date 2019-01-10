@@ -14,7 +14,7 @@ class PaymentsController extends Controller
      */
     public function index()
     {
-        $payments = Payment::all();
+        $payments = Payment::orderBy('created_at', 'desc')->get();
         return view('payments.index')->with('payments', $payments);
     }
 
@@ -47,7 +47,8 @@ class PaymentsController extends Controller
      */
     public function show($id)
     {
-        //
+        $payment = Payment::find($id);
+        return view('payments.show')->with('payment', $payment);
     }
 
     /**
