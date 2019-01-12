@@ -7,6 +7,7 @@ use App\Payment;
 
 class PaymentsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
