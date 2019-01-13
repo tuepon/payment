@@ -8,12 +8,12 @@
 	<body>
 	   @include('inc.navbar')
 	   <div class="container">
-			 	@include('inc.messages')
-        @yield('content')
-	   </div>
+			@include('inc.messages')
+			@yield('content')
+		</div>
 
-	   <footer id="footer" class="text-center">
-			 <p>Copyright &copy; 2019 Payment</p>
-	   </footer>
+		<footer id="footer" class="text-center">
+			<p>Copyright &copy; 2019 Payment</p>
+		</footer>
 	</body>
 </html>
