@@ -37,7 +37,19 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'payment' => 'required'
+        ]);
+
+    // Create Payment
+        $payment = new Payment;
+        $payment->payment = $request->input('payment');
+        $payment->due = $request->input('due');
+
+        $payment->save();
+
+        return redirect('/')->with('success', '入金登録しました');
+
     }
 
     /**

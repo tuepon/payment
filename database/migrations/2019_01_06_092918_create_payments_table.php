@@ -15,9 +15,9 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('due'); //何月分か記入
             $table->integer('payment'); //入金額
-            $table->integer('goal'); //目標金額
+            $table->string('due'); //何月分か記入
+            $table->integer('goal')->nullable()->change(); //目標金額
             $table->timestamps();
         });
     }
