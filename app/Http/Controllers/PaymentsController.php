@@ -37,9 +37,7 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'payment' => 'required'
-        ]);
+        $this->validate($request, ['payment' => 'required']);
 
     // Create Payment
         $payment = new Payment;

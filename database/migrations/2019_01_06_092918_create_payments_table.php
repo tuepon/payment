@@ -17,7 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->increments('id');
             $table->integer('payment'); //入金額
             $table->string('due'); //何月分か記入
-            $table->integer('goal')->nullable()->change(); //目標金額
+            $table->integer('goal')->nullable();//目標金額
             $table->timestamps();
         });
     }
