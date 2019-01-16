@@ -8,4 +8,8 @@
   <div>登録日:{{$payment->created_at->format('Y/m/d')}}</div>
   <br>
   <a href="/payment/{{$payment->id}}/edit" class="btn btn-default">編集画面へ</a>
+  {!! Form::open(['action' => ['PaymentsController@destroy', $payment->id], 'method' => 'POST', 'class' => 'float-right']) !!}
+    {{ Form::hidden('_method', 'DELETE') }}
+		{{ Form::bsSubmit('Delete', ['class' => 'btn btn-danger']) }}
+	{!! Form::close() !!}
 @endsection
