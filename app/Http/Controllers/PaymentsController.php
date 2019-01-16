@@ -37,16 +37,17 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['payment' => 'required']);
+        $this->validate($request, ['payment' => 'required', 'due' => 'required']);
 
     // Create Payment
         $payment = new Payment;
         $payment->payment = $request->input('payment');
         $payment->due = $request->input('due');
+        $payment->goal = $request->input('goal');
 
         $payment->save();
 
-        return redirect('/')->with('success', '入金登録しました');
+        return redirect('/')->with('success', '登録しました');
 
     }
 
@@ -70,7 +71,8 @@ class PaymentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $payment = Payment::find($id);
+        return view('payments.edit')->with('payment', $payment);
     }
 
     /**
@@ -82,7 +84,14 @@ class PaymentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $payment = Payment::find($id);
+        $payment->payment = $request->input('payment');
+        $payment->due = $request->input('due');
+        $payment->goal = $request->input('goal');
+
+        $payment->save();
+
+        return redirect('/')->with('success', '更新しました');
     }
 
     /**

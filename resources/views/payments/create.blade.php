@@ -5,6 +5,7 @@
 	{!! Form::open(['action' => 'PaymentsController@store', 'method' => 'POST']) !!}
 		{{ Form::bsText('payment') }}
 		{{ Form::bsText('due') }}
+		{{ Form::bsText('goal') }}
 		{{ Form::bsSubmit('Submit', ['class' => 'btn btn-primary']) }}
 	{!! Form::close() !!}
 @endsection
