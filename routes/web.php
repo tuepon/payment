@@ -12,5 +12,4 @@
 */
 
 Route::get('/', 'PaymentsController@index');
-
 Route::resource('payment', 'PaymentsController');

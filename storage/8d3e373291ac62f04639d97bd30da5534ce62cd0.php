@@ -1,6 +1,9 @@
 <?php $__env->startSection('content'); ?>
+	<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
   <h1>入金登録</h1>
 	<?php echo Form::open(['action' => 'PaymentsController@store', 'method' => 'POST']); ?>
+
+		<?php echo e(csrf_field()); ?>
 
 		<?php echo e(Form::bsText('payment')); ?>
 
