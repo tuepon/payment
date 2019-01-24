@@ -1,8 +1,7 @@
 <?php $__env->startSection('content'); ?>
   <a class="btn btn-default" href="/">戻る</a>
-  <h1><a href="/payment/<?php echo e($payment->id); ?>"><?php echo e($payment->id); ?></a></h1>
-  <h2><?php echo e($payment->payment); ?>円</h2>
-  <h3>月度:<div class="badge badge-success"><?php echo e($payment->due); ?></div></h3>
+  <h1>入金詳細</h1>
+  <h2><div class="badge badge-success"><?php echo e($payment->due); ?></div>&nbsp;<?php echo e($payment->payment); ?>円</h2>
   <div>登録日:<?php echo e($payment->created_at->format('Y/m/d')); ?></div>
   <br>
   <a href="/payment/<?php echo e($payment->id); ?>/edit" class="btn btn-default">編集画面へ</a>

@@ -37,13 +37,12 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['payment' => 'required', 'due' => 'required']);
+        $this->validate($request, ['due' => 'nullable', 'payment' => 'required']);
 
     // Create Payment
         $payment = new Payment;
-        $payment->payment = $request->input('payment');
         $payment->due = $request->input('due');
-        $payment->goal = $request->input('goal');
+        $payment->payment = $request->input('payment');
 
         $payment->save();
 
@@ -87,7 +86,6 @@ class PaymentsController extends Controller
         $payment = Payment::find($id);
         $payment->payment = $request->input('payment');
         $payment->due = $request->input('due');
-        $payment->goal = $request->input('goal');
 
         $payment->save();
 

@@ -6,7 +6,6 @@
 	{!! Form::open(['action' => ['PaymentsController@update', $payment->id], 'method' => 'POST']) !!}
 		{{ Form::bsText('payment', $payment->payment) }}
 		{{ Form::bsText('due', $payment->due) }}
-		{{ Form::bsText('goal', $payment->goal) }}
     {{ Form::hidden('_method', 'PUT') }}
 		{{ Form::bsSubmit('Submit', ['class' => 'btn btn-primary']) }}
 	{!! Form::close() !!}
