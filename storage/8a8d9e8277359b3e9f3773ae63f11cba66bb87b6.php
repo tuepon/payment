@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">Payment</a>
+    <a class="navbar-brand" href="/">Home Page</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse">
       <span class="navbar-toggler-icon"></span>
     </button>

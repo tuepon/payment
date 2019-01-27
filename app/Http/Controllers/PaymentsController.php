@@ -17,6 +17,7 @@ class PaymentsController extends Controller
     {
         $payments = Payment::orderBy('created_at', 'desc')->get();
         return view('payments.index')->with('payments', $payments);
+
     }
 
     /**

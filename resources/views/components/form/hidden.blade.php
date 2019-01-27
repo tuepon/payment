@@ -1,1 +1,3 @@
-{{Form::hidden($name, $value, $attributes)}}
+<div>
+  {{Form::hidden($name, $value, $attributes)}}
+</div>

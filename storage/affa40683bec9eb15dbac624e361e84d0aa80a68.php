@@ -5,11 +5,11 @@
   <div>登録日:<?php echo e($payment->created_at->format('Y/m/d')); ?></div>
   <br>
   <a href="/payment/<?php echo e($payment->id); ?>/edit" class="btn btn-default">編集画面へ</a>
-  <?php echo Form::open(['action' => ['PaymentsController@destroy', $payment->id], 'method' => 'POST', 'class' => 'float-right']); ?>
+  <?php echo Form::open(['action' => ['PaymentsController@destroy', $payment->id], 'method' => 'POST', 'class' => 'float-right', 'onsubmit' => 'return confirm("本当に削除しますか?")']); ?>
 
     <?php echo e(Form::hidden('_method', 'DELETE')); ?>
 
-		<?php echo e(Form::bsSubmit('Delete', ['class' => 'btn btn-danger'])); ?>
+		<?php echo e(Form::bsSubmit('削除', ['class' => 'btn btn-danger'])); ?>
 
 	<?php echo Form::close(); ?>
 
