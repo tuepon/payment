@@ -3,8 +3,13 @@
 @section('content')
   <h1>入金一覧</h1>
     <p>子どもの学費積立記録です。</p>
-    <h2>現在の金額:&nbsp;<div class="badge badge-success">{{ $payments->sum('payment') }}円</div></h2>
+    @if(($target->target_amount) > 0)
+      <h2>目標金額:&nbsp;<div class="badge badge-danger">{{ $target->target_amount }}円</div></h2>
+    @else
+      <p>目標金額を設定してください。</p>
+    @endif
 
+    <h2>入金総額:&nbsp;<div class="badge badge-success">{{ $payments->sum('payment') }}円</div></h2>
   <table class="table table-striped">
     <thead>
       <tr>

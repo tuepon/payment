@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Payment;
+use App\Target;
+
 
 class PaymentsController extends Controller
 {
@@ -16,8 +18,9 @@ class PaymentsController extends Controller
     public function index()
     {
         $payments = Payment::orderBy('created_at', 'desc')->get();
-        return view('payments.index')->with('payments', $payments);
-
+        $target = Target::find(1);
+    //    return view('payments.index')->with('payments', $payments);
+        return view('payments.index',compact('payments', 'target'));
     }
 
     /**
