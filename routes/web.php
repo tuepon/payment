@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'PaymentsController@index');
+Route::get('/target', 'TargetsController@index');
 
 Route::resource('payment', 'PaymentsController');
-
+Route::resource('target', 'TargetsController');
 
