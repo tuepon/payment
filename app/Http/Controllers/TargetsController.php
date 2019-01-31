@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Target;
 
 class TargetsController extends Controller
 {
@@ -13,7 +14,8 @@ class TargetsController extends Controller
      */
     public function index()
     {
-        return 123;
+        $target = Target::find(1);
+        return view('targets.index',compact('target', $target));
     }
 
     /**
@@ -23,7 +25,7 @@ class TargetsController extends Controller
      */
     public function create()
     {
-        //
+        return view('targets.create');
     }
 
     /**
@@ -34,7 +36,15 @@ class TargetsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, ['target_amount' => 'required']);
+
+        // Create Payment
+            $target = new Target;
+            $target->target_amount = $request->input('target_amount');
+            $target->save();
+    
+            return redirect('/')->with('success', '金額を設定しました');
+
     }
 
     /**
