@@ -38,7 +38,7 @@ class TargetsController extends Controller
     {
         $this->validate($request, ['target_amount' => 'required']);
 
-        // Create Payment
+        // Create Target
             $target = new Target;
             $target->target_amount = $request->input('target_amount');
             $target->save();
@@ -55,7 +55,8 @@ class TargetsController extends Controller
      */
     public function show($id)
     {
-        //
+        $target = Target::find($id);
+        return view('targets.show')->with('target', $target);
     }
 
     /**
@@ -66,7 +67,8 @@ class TargetsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $target = Target::find($id);
+        return view('targets.edit')->with('target', $target);
     }
 
     /**
