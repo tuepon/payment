@@ -1,12 +1,12 @@
 <?php $__env->startSection('content'); ?>
   <h1>入金一覧</h1>
     <p>子どもの学費積立記録です。</p>
-    <?php if(($target->target_amount) > 0): ?>
-      <h2>目標金額:&nbsp;<div class="badge badge-danger"><?php echo e($target->target_amount); ?>円</div></h2>
-    <?php else: ?>
-      <p>目標金額を設定してください。</p>
+  <h2>目標金額:&nbsp;
+    <?php if(isset($targets)): ?>
+      <?php $__currentLoopData = $targets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $target): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <?php echo e($target->target_amount); ?>円&nbsp;<button><a href="target/edit">編集</a></button></h2>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php endif; ?>
-
     <h2>入金総額:&nbsp;<div class="badge badge-success"><?php echo e($payments->sum('payment')); ?>円</div></h2>
   <table class="table table-striped">
     <thead>

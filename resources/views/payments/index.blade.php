@@ -3,12 +3,12 @@
 @section('content')
   <h1>入金一覧</h1>
     <p>子どもの学費積立記録です。</p>
-    @if(($target->target_amount) > 0)
-      <h2>目標金額:&nbsp;<div class="badge badge-danger">{{ $target->target_amount }}円</div></h2>
-    @else
-      <p>目標金額を設定してください。</p>
-    @endif
-
+  <h2>目標金額:&nbsp;
+    @isset($targets)
+      @foreach($targets as $target)
+      {{ $target->target_amount}}円&nbsp;<button><a href="target/edit">編集</a></button></h2>
+      @endforeach
+    @endisset
     <h2>入金総額:&nbsp;<div class="badge badge-success">{{ $payments->sum('payment') }}円</div></h2>
   <table class="table table-striped">
     <thead>
