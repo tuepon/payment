@@ -4,11 +4,11 @@
   <h1>入金一覧</h1>
     <p>子どもの学費積立記録です。</p>
   <h2>目標金額:&nbsp;
-    @isset($targets)
+    @if(count($targets) > 0)
       @foreach($targets as $target)
-      {{ $target->target_amount}}円&nbsp;<button><a href="target/edit">編集</a></button></h2>
+      {{ $target->target_amount}}円&nbsp;<button><a href="/target/edit">編集</a></button></h2>
       @endforeach
-    @endisset
+    @endif
     <h2>入金総額:&nbsp;<div class="badge badge-success">{{ $payments->sum('payment') }}円</div></h2>
   <table class="table table-striped">
     <thead>

@@ -12,8 +12,12 @@
 */
 
 Route::get('/', 'PaymentsController@index');
+Route::get('/about', function(){
+  return view('about');
+});
+
 Route::get('/target', 'TargetsController@index');
-Route::get('/target/edit', 'TargetsController@edit');
+Route::post('/target/edit', 'TargetsController@update');
 
 Route::resource('payment', 'PaymentsController');
 Route::resource('target', 'TargetsController');

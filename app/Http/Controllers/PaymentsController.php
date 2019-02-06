@@ -18,9 +18,8 @@ class PaymentsController extends Controller
     public function index()
     {
         $payments = Payment::orderBy('created_at', 'desc')->get();
-        $target = Target::find(1);
-    //    return view('payments.index')->with('payments', $payments);
-        return view('payments.index',compact('payments', 'target'));
+        $targets = Target::select('target_amount')->latest()->get();
+        return view('payments.index', compact('payments', 'targets'));
     }
 
     /**

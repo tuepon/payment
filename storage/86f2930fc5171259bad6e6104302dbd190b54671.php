@@ -13,7 +13,7 @@
 		</div>
 
 		<footer id="footer" class="text-center">
-			<p>Copyleft &copy; 2019 Tomonori Ueno</p>
+			<p>Copyright &copy; 2019 Payment</p>
 		</footer>
 	</body>
 </html>

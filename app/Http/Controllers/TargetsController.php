@@ -14,8 +14,10 @@ class TargetsController extends Controller
      */
     public function index()
     {
-        $target = Target::find(1);
-        return view('targets.index',compact('target', $target));
+        $targets = Target::all();
+        //$targets = Target::select('target_amount')->latest()->get();
+        //$target = 123;
+        return view('targets.index')->with('targets', $targets);
     }
 
     /**
@@ -55,8 +57,7 @@ class TargetsController extends Controller
      */
     public function show($id)
     {
-        $target = Target::find($id);
-        return view('targets.show')->with('target', $target);
+        return 'this is show page';
     }
 
     /**
@@ -67,7 +68,7 @@ class TargetsController extends Controller
      */
     public function edit($id)
     {
-        $target = Target::find($id);
+        $target = Target::all();
         return view('targets.edit')->with('target', $target);
     }
 
@@ -80,7 +81,7 @@ class TargetsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return 123;
     }
 
     /**
