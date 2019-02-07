@@ -1,10 +1,10 @@
 <?php $__env->startSection('content'); ?>
   <h1>入金一覧</h1>
-    <p>子どもの学費積立記録です。</p>
+    <p>大学生の子の学費積立メモアプリです。</p>
   <h2>目標金額:&nbsp;
     <?php if(count($targets) > 0): ?>
       <?php $__currentLoopData = $targets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $target): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <?php echo e($target->target_amount); ?>円&nbsp;<button><a href="/target/edit">編集</a></button></h2>
+      <?php echo e($target->target_amount); ?>円&nbsp;<button class="primary"><a href="/target/<?php echo e($target->id); ?>/edit">編集</a></button></h2>
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php endif; ?>
     <h2>入金総額:&nbsp;<div class="badge badge-success"><?php echo e($payments->sum('payment')); ?>円</div></h2>
@@ -14,7 +14,7 @@
         <th>月度</th>
         <th>金額</th>
         <th>登録日</th>
-        <th>ID</th>
+        <th>詳細</th>
       </tr>
     </thead>
     <tbody>

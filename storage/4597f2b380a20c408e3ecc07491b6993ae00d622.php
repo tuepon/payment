@@ -1,8 +1,8 @@
 <?php $__env->startSection('content'); ?>
   <h1>目標金額</h1>
-  <?php if(isset($targets)): ?>
-    <?php $__currentLoopData = $targets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $target): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <h2><?php echo e($target->target_amount); ?>円</h2>
+  <?php if(count($target) > 0): ?>
+    <?php $__currentLoopData = $target; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <h2><a href="target/<?php echo e($t->id); ?>"><?php echo e($t->id); ?></a>:&nbsp;<?php echo e($t->target_amount); ?>円</h2>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   <?php endif; ?>
 <?php $__env->stopSection(); ?>

@@ -7,4 +7,5 @@
 		{{ Form::bsText('target_amount') }}
 		{{ Form::bsSubmit('Submit', ['class' => 'btn btn-primary']) }}
 	{!! Form::close() !!}
+
 @endsection

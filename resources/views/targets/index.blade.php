@@ -2,9 +2,9 @@
 
 @section('content')
   <h1>目標金額</h1>
-  @isset($targets)
-    @foreach($targets as $target)
-    <h2>{{ $target->target_amount }}円</h2>
+  @if(count($target) > 0)
+    @foreach($target as $t)
+    <h2><a href="target/{{$t->id}}">{{$t->id}}</a>:&nbsp;{{ $t->target_amount }}円</h2>
     @endforeach
-  @endisset
+  @endif
 @endsection

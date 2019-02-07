@@ -15,10 +15,12 @@ class PaymentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //paymentのインデックスにtargetもviewさせる
     public function index()
     {
         $payments = Payment::orderBy('created_at', 'desc')->get();
-        $targets = Target::select('target_amount')->latest()->get();
+        //$targets = Target::select('target_amount')->latest()->get();
+        $targets = Target::all();
         return view('payments.index', compact('payments', 'targets'));
     }
 

@@ -2,7 +2,7 @@
   <a class="btn btn-default" href="/">戻る</a>
   <h1>入金詳細</h1>
   <h2><div class="badge badge-success"><?php echo e($payment->due); ?></div>&nbsp;<?php echo e($payment->payment); ?>円</h2>
-  <div>登録日:<?php echo e($payment->created_at->format('Y/m/d')); ?></div>
+  <div>登録日:<?php echo e($payment->created_at); ?></div>
   <br>
   <a href="/payment/<?php echo e($payment->id); ?>/edit" class="btn btn-default">編集画面へ</a>
   <?php echo Form::open(['action' => ['PaymentsController@destroy', $payment->id], 'method' => 'POST', 'class' => 'float-right', 'onsubmit' => 'return confirm("本当に削除しますか?")']); ?>

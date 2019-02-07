@@ -17,6 +17,7 @@ Route::get('/about', function(){
 });
 
 Route::get('/target', 'TargetsController@index');
+Route::get('/target/edit/', 'TargetsController@edit');
 Route::post('/target/edit', 'TargetsController@update');
 
 Route::resource('payment', 'PaymentsController');

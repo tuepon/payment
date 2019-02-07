@@ -2,11 +2,11 @@
 
 @section('content')
   <h1>入金一覧</h1>
-    <p>子どもの学費積立記録です。</p>
+    <p>大学生の子の学費積立メモアプリです。</p>
   <h2>目標金額:&nbsp;
     @if(count($targets) > 0)
       @foreach($targets as $target)
-      {{ $target->target_amount}}円&nbsp;<button><a href="/target/edit">編集</a></button></h2>
+      {{ $target->target_amount}}円&nbsp;<button class="primary"><a href="/target/{{$target->id}}/edit">編集</a></button></h2>
       @endforeach
     @endif
     <h2>入金総額:&nbsp;<div class="badge badge-success">{{ $payments->sum('payment') }}円</div></h2>
@@ -16,7 +16,7 @@
         <th>月度</th>
         <th>金額</th>
         <th>登録日</th>
-        <th>ID</th>
+        <th>詳細</th>
       </tr>
     </thead>
     <tbody>

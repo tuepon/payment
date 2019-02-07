@@ -14,10 +14,8 @@ class TargetsController extends Controller
      */
     public function index()
     {
-        $targets = Target::all();
-        //$targets = Target::select('target_amount')->latest()->get();
-        //$target = 123;
-        return view('targets.index')->with('targets', $targets);
+        $target = Target::orderBy('created_at', 'desc')->get();
+        return view('targets.index')->with('target', $target);
     }
 
     /**
@@ -57,7 +55,8 @@ class TargetsController extends Controller
      */
     public function show($id)
     {
-        return 'this is show page';
+        $target = Target::find($id);
+        return view('targets.show')->with('target', $target);
     }
 
     /**
@@ -68,7 +67,7 @@ class TargetsController extends Controller
      */
     public function edit($id)
     {
-        $target = Target::all();
+        $target = Target::find($id);
         return view('targets.edit')->with('target', $target);
     }
 
@@ -81,7 +80,10 @@ class TargetsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 123;
+        $target = Target::find($id);
+        $target->target_amount = $request->input('target_amount');
+        $target->save();
+        return redirect('/')->with('success', '更新しました');
     }
 
     /**
