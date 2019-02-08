@@ -36,7 +36,9 @@ class TargetsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['target_amount' => 'required']);
+        $this->validate($request, [
+            'target_amount' => 'required|integer'
+            ]);
 
         // Create Target
             $target = new Target;

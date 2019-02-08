@@ -42,7 +42,10 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['due' => 'nullable', 'payment' => 'required']);
+        $this->validate($request, [
+            'due' => 'nullable',
+            'payment' => 'required|integer'
+            ]);
 
     // Create Payment
         $payment = new Payment;

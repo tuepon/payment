@@ -23,3 +23,7 @@ Route::post('/target/edit', 'TargetsController@update');
 Route::resource('payment', 'PaymentsController');
 Route::resource('target', 'TargetsController');
 
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');

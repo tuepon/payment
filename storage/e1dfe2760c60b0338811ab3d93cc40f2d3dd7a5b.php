@@ -4,7 +4,7 @@
 <h2>仕様</h2>
   <ul>
     <li>Google App Engineにて稼働</li>
-    <li>PHP7.1/Laravel 5.7/MySQL 5.x/Bootstrap4</li>
+    <li>PHP 7.1/Laravel 5.7/MySQL 5.7/Bootstrap4</li>
   </ul>
 
 <h2>今後の機能追加予定</h2>
@@ -14,7 +14,9 @@
   </ul>
 
 <h2>GitHub</h2>
-  <a href="https://github.com/tuepon">Tomonori Ueno</a>
+  <ul>
+    <li><a href="https://github.com/tuepon">Tomonori Ueno</a></li>
+  </ul>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
