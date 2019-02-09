@@ -27,10 +27,10 @@
     <a class="navbar-brand" href="#">Payment</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="{{Request::is('/') ? 'active' : ''}}"><a href="/">ホーム</a></li>
-          <li class="{{Request::is('about') ? 'active' : ''}}">&nbsp;<a href="/about">サイトについて</a></li>
+          <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/">ホーム</a></li>
+          <li class="{{ Request::is('about') ? 'active' : '' }}">&nbsp;<a href="/about">サイトについて</a></li>
           @auth
-            <li class="{{Request::is('/dashboard') ? 'active' : ''}}">&nbsp;<a href="/dashboard">Dashboard</a></li>            
+            <li class="{{ Request::is('/dashboard') ? 'active' : '' }}">&nbsp;<a href="/dashboard">Dashboard</a></li>            
           @endauth
           </div>
             <!-- Right Side Of Navbar -->

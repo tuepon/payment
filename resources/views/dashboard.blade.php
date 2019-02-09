@@ -15,8 +15,8 @@
 
                     You are logged in!
                     <ul>
-                        <li class="{{Request::is('payment/create') ? 'active' : ''}}">&nbsp;<a href="/payment/create">入金登録</a></li>
-                        <li class="{{Request::is('target/create') ? 'active' : ''}}">&nbsp;<a href="/target/create">目標金額設定</a></li>
+                        <li class="{{ Request::is('payment/create') ? 'active' : '' }}">&nbsp;<a href="/payment/create">入金登録</a></li>
+                        <li class="{{ Request::is('target/create') ? 'active' : '' }}">&nbsp;<a href="/target/create">目標金額設定</a></li>
                     </ul>
                 </div>
             </div>
