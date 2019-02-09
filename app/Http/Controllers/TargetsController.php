@@ -96,6 +96,9 @@ class TargetsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $target = Target::find($id);
+        $target->delete();
+
+        return redirect('/')->with('success', '削除しました');
     }
 }

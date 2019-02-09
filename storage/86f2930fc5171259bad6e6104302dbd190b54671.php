@@ -8,7 +8,7 @@
 	</head>
 	<body>
 	   		<?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-	   <div class="container">
+	  <div class="container">
 				<?php echo $__env->make('inc.messages', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 				<?php echo $__env->yieldContent('content'); ?>
 		</div>
