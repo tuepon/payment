@@ -18,4 +18,28 @@
   <ul>
     <li><a href="https://github.com/tuepon">Tomonori Ueno</a></li>
   </ul>
+
+<h2>取得資格</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>資格名</th>
+        <th>取得年</th>
+        <th>有効性</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Linux技術者認定（LPIC）レベル1</td>
+        <td>2007年</td>
+        <td>Inactive</td>
+      </tr>
+      <tr>
+        <td>HTML5プロフェッショナル認定レベル1</td>
+        <td>2018年</td>
+        <td>Active</td> 
+      </tr>
+    </tbody>
+  </table>
+
 @endsection
