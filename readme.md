@@ -1,6 +1,3 @@
-This Web App was deployed to following.
-https://enduring-coil-138923.appspot.com/
-
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
